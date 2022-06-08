@@ -4,15 +4,8 @@ from django.template import loader
 
 # Create your views here.
 
-#my_template = loader.get_template('index.html')
+def home(request):
+    return render(request, 'entrega7/home.html')
 
-#def home(request):
-#  return HttpResponse('Hola django-coder')
-
-def home(self):
-    template = loader.get_template('index.html')
-    document = template.render()
-    
-    #return HttpResponse(request, 'entrega7/inicio.html')
-    return HttpResponse(document)
-
+def books(request):
+    return render(request, 'entrega7/books.html')

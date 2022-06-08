@@ -55,8 +55,8 @@ ROOT_URLCONF = 'proyectofinaljaliaga.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        #'DIRS': ['/Users/josemanuelfranciscoaliaga/22/entrega_7_jaliaga/proyectofinaljaliaga/entrega7/template/'],
-        'DIRS': ['../entrega7/template/'],
+        'DIRS': ['/Users/josemanuelfranciscoaliaga/22/entrega_7_jaliaga/proyectofinaljaliaga/entrega7/template/'],
+        #'DIRS': ['../entrega7/template/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

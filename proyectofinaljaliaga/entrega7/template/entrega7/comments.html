@@ -1,0 +1,15 @@
+{% extends "entrega7/model.html" %}
+{% load static %}
+
+{% block changeme %}
+<h1>Sección comentarios</h1>
+
+<div>
+  <button> <a href="{% url 'searchcomment' %}">Buscar comentario</a></button>
+  <br>
+  <br>
+  <button><a href="{%url 'addcomment' %}">Agregar comentario</a></button>
+</div>
+
+{% endblock %}
+

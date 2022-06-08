@@ -1,0 +1,14 @@
+{% extends "entrega7/model.html" %}
+{% load static %}
+
+{% block changeme %}
+<h1>Página de usuarios</h1>
+
+<div>
+  <button> <a href="{% url 'searchuser' %}">Buscar usuario</a></button>
+  <br>
+  <br>
+  <button><a href="{%url 'adduser' %}">Crear usuario</a></button>
+</div>
+
+{% endblock %}

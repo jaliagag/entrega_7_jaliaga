@@ -1,0 +1,23 @@
+{% extends "entrega7/model.html" %}
+{% load static %}
+
+{% block changeme %}
+
+<h3>Vamos a comentar</h3>
+
+{% if myform.errors %}
+
+<p style='color: red;'> Están mal los datos, revisar</p>
+
+{% endif %}
+
+<form action="" method="POST">{% csrf_token %}
+
+  <table>
+
+    {{ myform.as_table }}
+
+  </table>
+  <input type="submit" value="Crear">
+
+{% endblock %}

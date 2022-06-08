@@ -1,0 +1,15 @@
+{% extends "entrega7/model.html" %}
+{% load static %}
+
+{% block changeme %}
+<h1>Buscar usuarios por nombre de usuario</h1>
+
+<form action="{% url 'searchtheuser' %}" method="GET">
+
+  <input type="text" name="user_name" id="user_name">
+  <input type="submit" value="Buscar">
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "entrega7/model.html" %}
+{% load static %}
+
+{% block changeme %}
+<h1>Resultados de búsqueda</h1>
+
+<p>Autor en cuestion: {{author}}</p>
+
+{% if books %}
+
+<ul>
+
+{% for author in books %}
+  <li> {{author.title}}</li>
+  <li> {{author.date}}</li>
+  <li> {{author.description}}</li>
+  <br>
+{% endfor %}
+
+</ul>
+
+{% endif %}
+
+{% endblock %}
+

@@ -1,0 +1,13 @@
+{% extends "entrega7/model.html" %}
+{% load static %}
+
+{% block changeme %}
+<h1>Hablemos de libros! </h1>
+
+<div>
+  <button> <a href="{% url 'searchbook' %}">Buscar Libros</a></button>
+  <br>
+  <br>
+  <button><a href="{%url 'addbook' %}">Agregar Libros</a></button>
+</div>
+{% endblock %}

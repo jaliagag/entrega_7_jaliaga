@@ -1,11 +1,11 @@
 from django.db import models
 
-class usuario(models.Model):
+class User(models.Model):
     user_name = models.CharField(max_length=40)
     passw = models.CharField(max_length=40)
     email = models.EmailField()
 
-class book(models.Model):
+class Book(models.Model):
     title = models.CharField(max_length=40)
     description = models.CharField(max_length=200)
     genre = models.CharField(max_length=40)
@@ -13,7 +13,7 @@ class book(models.Model):
     isbn = models.IntegerField()
     date = models.DateField()
 
-class comment(models.Model):
+class Comment(models.Model):
     title= models.CharField(max_length=40)
     text = models.CharField(max_length=200)
     date = models.DateField()

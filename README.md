@@ -24,6 +24,8 @@ Llegados a este punto deberíamos ver algo así:
 
 ![img001](./img/001.png)
 
+- Para crear un super usuario y ver cómo se agregan las entradas en la base de datos tenemos que correr: `python manage.py createsuperuser`
+
 ## Uso
 
 En el menú de arriba a la derecha tenemos 4 botones:

@@ -11,35 +11,15 @@ from entrega7.forms import *
 def home(request):
     return render(request, 'entrega7/home.html')
 
-#def books(request):
-#    return render(request, 'entrega7/books.html')
+############################
 
 def comments(request):
-    return render(request, 'entrega7/comments.html')
+    return render(request,'entrega7/comments.html')
 
-# classes
-#class UserForm(forms.Forms):
-#    user_name = forms.CharField(max_length=40)
-#    passw = forms.CharField(max_length=40)
-#    email = forms.EmailField()
-#
-#class BookForm(forms.Forms):
-#    title = forms.CharField(max_length=40)
-#    description = forms.CharField(max_length=200)
-#    genre = forms.CharField(max_length=40)
-#    author = forms.CharField(max_length=40)
-#    isbn = forms.IntegerField()
-#    date = forms.DateField()
-#
-#class CommentForm(forms.Forms):
-#    title= forms.CharField(max_length=40)
-#    text = forms.CharField(max_length=200)
-#    date = forms.DateField()
+def searchcomment(request):
+    return render(request,'entrega7/searchcomment.html')
 
-
-# creation pages
-
-def comments(request):
+def addcomment(request):
     if request.method == 'POST':
         myform = CommentForm(request.POST)
         if myform.is_valid():
@@ -55,10 +35,17 @@ def comments(request):
             return render(request, 'entrega7/success.html')
     else:
         myform = CommentForm()
-    return render(request, 'entrega7/comments.html',{'myform':myform})
+    return render(request, 'entrega7/addcomment.html',{'myform':myform})
 
+############################
 
 def users(request):
+    return render(request,'entrega7/users.html')
+
+def searchuser(request):
+    return render(request,'entrega7/searchuser.html')
+
+def adduser(request):
     if request.method == 'POST':
         myform = UserForm(request.POST)
         if myform.is_valid():
@@ -74,9 +61,11 @@ def users(request):
             return render(request, 'entrega7/success.html')
     else:
         myform = UserForm()
-    return render(request, 'entrega7/users.html',{'myform':myform})
+    return render(request, 'entrega7/adduser.html',{'myform':myform})
 
-def books(request):
+########################
+
+def addbook(request):
     if request.method == 'POST':
         myform = BookForm(request.POST)
         if myform.is_valid():
@@ -96,7 +85,14 @@ def books(request):
             return render(request, 'entrega7/success.html')
     else:
         myform = BookForm()
-    return render(request, 'entrega7/books.html',{'myform':myform})
+    return render(request, 'entrega7/addbook.html',{'myform':myform})
+
+def books(request):
+    return render(request,'entrega7/books.html')
+
+def searchbook(request):
+    # search logic
+    return render(request,'entrega7/searchbook.html')
 
 # retrieving information pages
 

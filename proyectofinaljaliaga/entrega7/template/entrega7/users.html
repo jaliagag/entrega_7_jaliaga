@@ -2,21 +2,13 @@
 {% load static %}
 
 {% block changeme %}
-<h1>Creemos un usuario!</h1>
+<h1>Página de usuarios</h1>
 
-{% if myform.errors %}
-
-<p style='color: red;'> Están mal los datos, revisar</p>
-
-{% endif %}
-
-<form action="" method="POST">{% csrf_token %}
-
-  <table>
-
-    {{ myform.as_table }}
-
-  </table>
-  <input type="submit" value="Crear">
+<div>
+  <button> <a href="{% url 'searchuser' %}">Buscar usuario</a></button>
+  <br>
+  <br>
+  <button><a href="{%url 'adduser' %}">Crear usuario</a></button>
+</div>
 
 {% endblock %}

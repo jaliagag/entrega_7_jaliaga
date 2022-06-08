@@ -4,21 +4,10 @@
 {% block changeme %}
 <h1>Hablemos de libros! </h1>
 
-<h3>Agreguemos un libro</h3>
-
-{% if myform.errors %}
-
-<p style='color: red;'> Están mal los datos, revisar</p>
-
-{% endif %}
-
-<form action="" method="POST">{% csrf_token %}
-
-  <table>
-
-    {{ myform.as_table }}
-
-  </table>
-  <input type="submit" value="Crear">
-
+<div>
+  <button> <a href="{% url 'searchbook' %}">Buscar Libros</a></button>
+  <br>
+  <br>
+  <button><a href="{%url 'addbook' %}">Agregar Libros</a></button>
+</div>
 {% endblock %}

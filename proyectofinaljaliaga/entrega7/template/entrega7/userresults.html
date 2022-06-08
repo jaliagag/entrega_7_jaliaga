@@ -1,0 +1,24 @@
+{% extends "entrega7/model.html" %}
+{% load static %}
+
+{% block changeme %}
+<h1>Resultados de búsqueda</h1>
+
+<p>Usuario en cuestion: {{user_name}}</p>
+
+{% if users %}
+
+<ul>
+
+{% for i in users %}
+  <li> {{i.user_name}}</li>
+  <li> {{i.email}}</li>
+  <br>
+{% endfor %}
+
+</ul>
+
+{% endif %}
+
+{% endblock %}
+

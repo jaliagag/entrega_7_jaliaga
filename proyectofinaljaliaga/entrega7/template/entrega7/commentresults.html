@@ -1,0 +1,25 @@
+{% extends "entrega7/model.html" %}
+{% load static %}
+
+{% block changeme %}
+<h1>Resultados de búsqueda</h1>
+
+<p>Comentario en cuestion: {{title}}</p>
+
+{% if titles %}
+
+<ul>
+
+{% for title in titles %}
+  <li> {{title.title}}</li>
+  <li> {{title.text}}</li>
+  <li> {{title.date}}</li>
+  <br>
+{% endfor %}
+
+</ul>
+
+{% endif %}
+
+{% endblock %}
+

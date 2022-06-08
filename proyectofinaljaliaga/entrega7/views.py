@@ -36,14 +36,20 @@ def addcomment(request):
     else:
         myform = CommentForm()
     return render(request, 'entrega7/addcomment.html',{'myform':myform})
+def searchthecomment(request):
+    if request.GET['title']:
+        title = request.GET['title']
+        titles = Comment.objects.filter(title__icontains=title)
 
+        return render(request, 'entrega7/commentresults.html',{'titles':titles,'title':title})
+
+    else:
+        respon = 'no se enviaron datos'
+    return HttpResponse(respon)
 ############################
 
 def users(request):
     return render(request,'entrega7/users.html')
-
-def searchuser(request):
-    return render(request,'entrega7/searchuser.html')
 
 def adduser(request):
     if request.method == 'POST':
@@ -63,7 +69,23 @@ def adduser(request):
         myform = UserForm()
     return render(request, 'entrega7/adduser.html',{'myform':myform})
 
+def searchtheuser(request):
+    if request.GET['user_name']:
+        user_name = request.GET['user_name']
+        users = User.objects.filter(user_name__icontains=user_name)
+
+        return render(request, 'entrega7/userresults.html',{'users':users,'user_name':user_name})
+
+    else:
+        respon = 'no se enviaron datos'
+    return HttpResponse(respon)
+
+def searchuser(request):
+    return render(request,'entrega7/searchuser.html')
+
 ########################
+def books(request):
+    return render(request,'entrega7/books.html')
 
 def addbook(request):
     if request.method == 'POST':
@@ -87,13 +109,21 @@ def addbook(request):
         myform = BookForm()
     return render(request, 'entrega7/addbook.html',{'myform':myform})
 
-def books(request):
-    return render(request,'entrega7/books.html')
+def searchthebook(request):
+    #if request.GET.get('author'):
+    if request.GET['author']:
+        author = request.GET['author']
+        books = Book.objects.filter(author__icontains=author)
 
-def searchbook(request):
-    # search logic
+        return render(request, 'entrega7/bookresults.html',{'books':books,'author':author})
+
+    else:
+        respon = 'no se enviaron datos'
+    return HttpResponse(respon)
+
+def searchbook(request): # busquedacamada
     return render(request,'entrega7/searchbook.html')
 
-# retrieving information pages
-
-# search pages
+#def bookresults(request):
+#    #
+#    return render(request,'entrega7/bookresults.html')

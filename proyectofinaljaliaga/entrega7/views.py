@@ -39,6 +39,43 @@ def comments(request):
 
 # creation pages
 
+def comments(request):
+    if request.method == 'POST':
+        myform = CommentForm(request.POST)
+        if myform.is_valid():
+            info = myform.cleaned_data
+
+            title = info['title']
+            text = info['text']
+            date = info['date']
+
+            comment = Comment(title=title,text=text,date=date)
+            comment.save()
+
+            return render(request, 'entrega7/success.html')
+    else:
+        myform = CommentForm()
+    return render(request, 'entrega7/comments.html',{'myform':myform})
+
+
+def users(request):
+    if request.method == 'POST':
+        myform = UserForm(request.POST)
+        if myform.is_valid():
+            info = myform.cleaned_data
+
+            user_name = info['user_name']
+            passw = info['passw']
+            email = info['email']
+
+            user = User(user_name=user_name,passw=passw,email=email)
+            user.save()
+
+            return render(request, 'entrega7/success.html')
+    else:
+        myform = UserForm()
+    return render(request, 'entrega7/users.html',{'myform':myform})
+
 def books(request):
     if request.method == 'POST':
         myform = BookForm(request.POST)
@@ -51,14 +88,15 @@ def books(request):
             author = info['author']
             isbn = info['isbn']
             date = info['date']
+            user = info['user']
 
-            book = Book(title=title,description=description,genre=genre,author=author,isbn=isbn,date=date)
+            book = Book(title=title,description=description,genre=genre,author=author,isbn=isbn,date=date,user=user)
             book.save()
 
             return render(request, 'entrega7/success.html')
     else:
         myform = BookForm()
-    return render(request, 'entrega7/addbook.html',{'myform':myform})
+    return render(request, 'entrega7/books.html',{'myform':myform})
 
 # retrieving information pages
 

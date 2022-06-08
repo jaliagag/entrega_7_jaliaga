@@ -7,6 +7,7 @@ from entrega7 import views
 urlpatterns = [
   path('',views.home, name='home'),
   path('books/',views.books, name='books'),
+  path('users/',views.users, name='users'),
 #  path('addbook/',views.addBook),
   path('searchbook/',views.home),
   path('authors/',views.home),

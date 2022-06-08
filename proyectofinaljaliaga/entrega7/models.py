@@ -15,6 +15,7 @@ class Book(models.Model):
     author = models.CharField(max_length=40)
     isbn = models.IntegerField()
     date = models.DateField()
+    user = models.CharField(max_length=40)
 
     def __srt__(self) -> str:
         return self.title+' '+str(self.description)+' '+str(self.genre)+' '+str(self.author)+' '+str(self.isbn)+' '+str(self.date)

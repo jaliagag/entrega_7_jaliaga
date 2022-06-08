@@ -15,6 +15,7 @@ class BookForm(forms.Form):
     author = forms.CharField(max_length=40)
     isbn = forms.IntegerField()
     date = forms.DateField()
+    user = forms.CharField(max_length=40)
 
 class CommentForm(forms.Form):
     title= forms.CharField(max_length=40)

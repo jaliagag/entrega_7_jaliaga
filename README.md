@@ -10,7 +10,7 @@
 
 - Clonar el repositorio: `git clone git@github.com:jaliagag/entrega_7_jaliaga.git`
 - Entrar en el directorio: `cd entrega_7_jaliaga`
-- Agregar la ruta completa del directorio `templates` en el archivo `proyectofinaljaliaga/projectofinal/settings.py`, **línea 58**, del proyecto
+- Agregar la ruta completa del directorio `templates` en el archivo `entrega_7_jaliaga/proyectofinaljaliaga/projectofinal/settings.py`, **línea 58**, del proyecto
 
 ```console
 # Reemplazar la lína 58 por la ruta hasta nuestro directorio de templates
@@ -35,3 +35,4 @@ En el menú de arriba a la derecha tenemos 4 botones:
 - LIBROS: nos permite crear o buscar (por _autor_) LIBROS
 - COMENTARIOS: nos permite crear o buscar (por título del comentario) COMENTARIOS
 
+Para agregar fechas, cuando sea correspondiente, usar este formato: `aaaa-mm-dd`
